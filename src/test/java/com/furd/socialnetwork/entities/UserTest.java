@@ -18,7 +18,14 @@ public class UserTest {
     public void shouldPrintUser() {
         User newUser = new User()
                 .setId(15)
-                .setFullName("Yurii Furd");
+                .setFullName("Yurii Furd")
+                .setHomeCity("T1");
         assertEquals("id = 15, fullName = Yurii Furd", "User id=15, fullName=Yurii Furd", newUser.toString());
+    }
+    @Test
+    public void shouldPrintPhoneNumber() {
+        User user = new User()
+                .setPhoneNumber(967471745);
+        assertEquals("PhoneNumber = 967471745", 967471745, user.getPhoneNumber());
     }
 }
