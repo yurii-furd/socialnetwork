@@ -1,5 +1,7 @@
 package com.furd.socialnetwork.entities;
 
+import java.util.Date;
+
 /**
  * This class is for modeling message entities.
  * POJO Plain of java object.
@@ -8,8 +10,8 @@ package com.furd.socialnetwork.entities;
  */
 public class Message {
     private long id;
-    private int dateAndTime;
-    private boolean indicator;
+    private Date date;
+    private boolean isRead;
     private String text;
 
     public long getId() {
@@ -21,21 +23,21 @@ public class Message {
         return this;
     }
 
-    public int getDateAndTime() {
-        return dateAndTime;
+    public Date getDate() {
+        return date;
     }
 
-    public Message setDateAndTime(int dateAndTime) {
-        this.dateAndTime = dateAndTime;
+    public Message setDate(Date date) {
+        this.date = date;
         return this;
     }
 
-    public boolean isIndicator() {
-        return indicator;
+    public boolean isRead() {
+        return isRead;
     }
 
-    public Message setIndicator(boolean indicator) {
-        this.indicator = indicator;
+    public Message setRead(boolean read) {
+        isRead = read;
         return this;
     }
 

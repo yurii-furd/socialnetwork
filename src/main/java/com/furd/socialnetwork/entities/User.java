@@ -18,6 +18,8 @@ public class User {
     private String homeCity;
     private long phoneNumber;
     private String email;
+    private boolean isOnline;
+
 
     public long getId() {
         return id;
@@ -89,6 +91,24 @@ public class User {
     public User setEmail(String email) {
         this.email = email;
         return this;
+    }
+
+    public boolean isOnline() {
+        return isOnline;
+    }
+
+    public User setOnline(boolean online) {
+        isOnline = online;
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        User user = (User) obj;
+        return this.id == user.id
+                && this.login.equals(user.login); // TODO: finish this method
     }
 
     @Override

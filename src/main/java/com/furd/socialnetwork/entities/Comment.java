@@ -1,5 +1,7 @@
 package com.furd.socialnetwork.entities;
 
+import java.util.Date;
+
 /**
  * This class is for modeling comment entities.
  * POJO Plain of java object
@@ -9,7 +11,8 @@ package com.furd.socialnetwork.entities;
 public class Comment {
     private long id;
     private String text;
-    private int dateAndTime;
+    private Date date;
+    private long userId;
 
     public long getId() {
         return id;
@@ -29,12 +32,21 @@ public class Comment {
         return this;
     }
 
-    public int getDateAndTime() {
-        return dateAndTime;
+    public Date getDate() {
+        return date;
     }
 
-    public Comment setDateAndTime(int dateAndTime) {
-        this.dateAndTime = dateAndTime;
+    public Comment setDate(Date date) {
+        this.date = date;
+        return this;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public Comment setUserId(long userId) {
+        this.userId = userId;
         return this;
     }
 }
