@@ -1,6 +1,7 @@
 package com.furd.socialnetwork.entities;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * This class is for modeling user entity.
@@ -107,8 +108,21 @@ public class User {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         User user = (User) obj;
-        return this.id == user.id
-                && this.login.equals(user.login); // TODO: finish this method
+        return this.id == user.id &&
+                this.login.equals(user.login) &&
+                this.password.equals(user.password) &&
+                this.fullName.equals(user.fullName) &&
+                this.birthday.equals(user.birthday) &&
+                this.homeCity.equals(user.homeCity) &&
+                this.phoneNumber == user.phoneNumber &&
+                this.email.equals(user.email) &&
+                this.isOnline == user.isOnline;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, login, password, fullName, birthday, homeCity, phoneNumber, email, isOnline);
     }
 
     @Override

@@ -15,13 +15,8 @@ public class MessageTest {
     @Test
     public void shouldPrintMassage() {
         Message message = new Message()
-                .setText("hello");
+                .setText("Hello");
         assertEquals("shouldPrint - Hello", "Hello", message.getText());
     }
-    @Test
-    public void shouldIndicator(){
-        Message message = new Message()
-                .setIndicator(true);
-        assertEquals("Indicator = True", true, message.isIndicator());
-    }
+
 }
