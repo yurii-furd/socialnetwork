@@ -11,6 +11,7 @@ import java.util.Objects;
  */
 
 public class User {
+
     private long id;
     private String login;
     private String password;
@@ -20,7 +21,6 @@ public class User {
     private long phoneNumber;
     private String email;
     private boolean isOnline;
-
 
     public long getId() {
         return id;

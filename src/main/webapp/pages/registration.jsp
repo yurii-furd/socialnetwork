@@ -7,6 +7,7 @@
     </head>
     <body>
         <form action="Controller">
+            <input type="hidden" name="command" value="registration"/>
           <div class="container">
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
@@ -23,6 +24,12 @@
 
             <label for="Home City"><b>Home City</b></label>
             <input type="text" placeholder="Enter Home City" name="Home City" required></br>
+
+            <label for="Phone Number"><b>Home City</b></label>
+            <input type="text" placeholder="Enter Phone Number" name="Phone Number" required></br>
+
+            <label for="Birthday"><b>Home City</b></label>
+            <input type="text" placeholder="Enter Birthday" name="Birthday" required></br>
 
              <hr>
 
