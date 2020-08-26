@@ -27,7 +27,7 @@ public class Freund {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || getClass() == obj.getClass()) return false;
+        if (obj == null || getClass() != obj.getClass()) return false;
         Freund freund = (Freund) obj;
         return this.frendId == freund.frendId &&
                 this.userId == freund.userId;
