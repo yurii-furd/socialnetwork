@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>Registration</title>
-        <link rel="stylesheet" type="text/css" href="css/register.css">
+        <link rel="stylesheet" type="text/css" href="./../css/register.css">
     </head>
     <body>
-        <form action="Controller">
+        <form action="../Controller" method="post">
             <input type="hidden" name="command" value="registration"/>
           <div class="container">
             <h1>Register</h1>
@@ -23,13 +23,13 @@
             <input type="password" placeholder="Repeat Password" name="psw-repeat" required></br>
 
             <label for="Home City"><b>Home City</b></label>
-            <input type="text" placeholder="Enter Home City" name="Home City" required></br>
+            <input type="text" placeholder="Enter Home City" name="home-city" required></br>
 
-            <label for="Phone Number"><b>Home City</b></label>
-            <input type="text" placeholder="Enter Phone Number" name="Phone Number" required></br>
+            <label for="Phone Number"><b>Phone Number</b></label>
+            <input type="number" placeholder="Enter Phone Number" name="phone-number" required></br>
 
-            <label for="Birthday"><b>Home City</b></label>
-            <input type="text" placeholder="Enter Birthday" name="Birthday" required></br>
+            <label for="Birthday"><b>Birthday</b></label>
+            <input type="text" placeholder="Enter Birthday" name="birthday" required></br>
 
              <hr>
 
