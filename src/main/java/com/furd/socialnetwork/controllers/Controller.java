@@ -1,5 +1,8 @@
 package com.furd.socialnetwork.controllers;
 
+import com.furd.socialnetwork.commands.Command;
+import com.furd.socialnetwork.commands.UserRegistration;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,11 +22,12 @@ public class Controller extends HttpServlet {
 
     protected void doGetDoPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         String value = request.getParameter("command");
+        String page = null;
         if("registration".equals(value)){
-            String email = request.getParameter("login");
-            System.out.println(email);
+            Command userRegistration = new UserRegistration();
+            page = userRegistration.execute(request, resp);
         }
 
-        getServletContext().getRequestDispatcher("/index.jsp").forward(request, resp);
+        getServletContext().getRequestDispatcher(page).forward(request, resp);
     }
 }
