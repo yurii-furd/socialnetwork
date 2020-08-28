@@ -14,9 +14,9 @@ public class UserRegistration implements Command {
         String fullName = request.getParameter("full-name");
         String homeCity = request.getParameter("home-city");
         String phoneNumber = request.getParameter("phone-number");
-
+        int phoneNumber1 = Integer.parseInt(phoneNumber.trim());
         String birthday = request.getParameter("birthday");
-
+        //int birthday1 = Integer.parseInt(birthday.trim());
         String email = request.getParameter("email");
 
 
@@ -33,7 +33,10 @@ public class UserRegistration implements Command {
                 .setPassword(password)
                 .setPassword(pswRepea)
                 .setFullName(fullName)
-                .setHomeCity(homeCity);
+                .setHomeCity(homeCity)
+                .setPhoneNumber(phoneNumber1)
+                //.setBirthday(birthday1)
+                .setEmail(email);
 
         // Store user to DB
 
