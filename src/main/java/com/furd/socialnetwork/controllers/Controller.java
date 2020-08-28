@@ -20,7 +20,7 @@ public class Controller extends HttpServlet {
     protected void doGetDoPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         String value = request.getParameter("command");
         if("registration".equals(value)){
-            String email = request.getParameter("email");
+            String email = request.getParameter("login");
             System.out.println(email);
         }
 

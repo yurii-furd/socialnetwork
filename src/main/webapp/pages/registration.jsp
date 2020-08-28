@@ -13,14 +13,17 @@
             <p>Please fill in this form to create an account.</p>
             <hr>
 
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <label for="login"><b>Login</b></label>
+            <input type="text" placeholder="Enter Login" name="login" required>
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required></br>
 
             <label for="psw-repeat"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="psw-repeat" required></br>
+
+            <label for="full name"><b>Full Name</b></label>
+            <input type="text" placeholder="Enter Full Name" name="full-name" required></br>
 
             <label for="Home City"><b>Home City</b></label>
             <input type="text" placeholder="Enter Home City" name="home-city" required></br>
@@ -30,6 +33,9 @@
 
             <label for="Birthday"><b>Birthday</b></label>
             <input type="text" placeholder="Enter Birthday" name="birthday" required></br>
+
+            <label for="email"><b>email</b></label>
+            <input type="text" placeholder="Enter email" name="email" required></br>
 
              <hr>
 
