@@ -4,6 +4,7 @@ import com.furd.socialnetwork.entities.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 
 public class UserRegistration implements Command {
     @Override
@@ -16,7 +17,7 @@ public class UserRegistration implements Command {
         String phoneNumber = request.getParameter("phone-number");
         int phoneNumber1 = Integer.parseInt(phoneNumber.trim());
         String birthday = request.getParameter("birthday");
-        //int birthday1 = Integer.parseInt(birthday.trim());
+
         String email = request.getParameter("email");
 
 
@@ -24,6 +25,10 @@ public class UserRegistration implements Command {
         // TODO 1. Check login is free and correct
 
         if (login.length() < 3) {
+            return "error";
+        } else if (password != pswRepea && password.length() < 5) {
+            return "error";
+        } else if (fullName.length() < 5 && fullName.length() > 25) {
             return "error";
         }
 
