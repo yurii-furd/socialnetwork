@@ -17,7 +17,7 @@ public class UserRegistration implements Command {
         String phoneNumber = request.getParameter("phone-number");
         int phoneNumber1 = Integer.parseInt(phoneNumber.trim());
         String birthday = request.getParameter("birthday");
-
+        //
         String email = request.getParameter("email");
 
 
