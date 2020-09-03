@@ -14,6 +14,26 @@ public class Message {
     private Date date;
     private boolean isRead;
     private String text;
+    private long receiverId;
+    private long senderId;
+
+    public long getReceiverId() {
+        return receiverId;
+    }
+
+    public Message setReceiverId(long receiverId) {
+        this.receiverId = receiverId;
+        return this;
+    }
+
+    public long getSenderId() {
+        return senderId;
+    }
+
+    public Message setSenderId(long senderId) {
+        this.senderId = senderId;
+        return this;
+    }
 
     public long getId() {
         return id;
@@ -59,12 +79,14 @@ public class Message {
         return this.id == message.id &&
                 this.date.equals(message.date) &&
                 this.isRead == message.isRead &&
-                this.text.equals(message.text);
+                this.text.equals(message.text) &&
+                this.receiverId == message.receiverId &&
+                this.senderId == message.senderId;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, date, isRead, text);
+        return Objects.hash(id, date, isRead, text, receiverId, senderId);
     }
 }

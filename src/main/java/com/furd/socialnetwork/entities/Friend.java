@@ -2,7 +2,7 @@ package com.furd.socialnetwork.entities;
 
 import java.util.Objects;
 
-public class Freund {
+public class Friend {
     private long userId;
     private long frendId;
 
@@ -10,7 +10,7 @@ public class Freund {
         return userId;
     }
 
-    public Freund setUserId(long userId) {
+    public Friend setUserId(long userId) {
         this.userId = userId;
         return this;
     }
@@ -19,7 +19,7 @@ public class Freund {
         return frendId;
     }
 
-    public Freund setFrendId(long frendId) {
+    public Friend setFrendId(long frendId) {
         this.frendId = frendId;
         return this;
     }
@@ -28,9 +28,9 @@ public class Freund {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        Freund freund = (Freund) obj;
-        return this.frendId == freund.frendId &&
-                this.userId == freund.userId;
+        Friend friend = (Friend) obj;
+        return this.frendId == friend.frendId &&
+                this.userId == friend.userId;
     }
     @Override
     public int hashCode(){

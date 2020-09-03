@@ -20,7 +20,6 @@ public class User {
     private String homeCity;
     private long phoneNumber;
     private String email;
-    private boolean isOnline;
 
     public long getId() {
         return id;
@@ -94,14 +93,6 @@ public class User {
         return this;
     }
 
-    public boolean isOnline() {
-        return isOnline;
-    }
-
-    public User setOnline(boolean online) {
-        isOnline = online;
-        return this;
-    }
 
     @Override
     public boolean equals(Object obj) {
@@ -115,14 +106,13 @@ public class User {
                 this.birthday.equals(user.birthday) &&
                 this.homeCity.equals(user.homeCity) &&
                 this.phoneNumber == user.phoneNumber &&
-                this.email.equals(user.email) &&
-                this.isOnline == user.isOnline;
+                this.email.equals(user.email);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, login, password, fullName, birthday, homeCity, phoneNumber, email, isOnline);
+        return Objects.hash(id, login, password, fullName, birthday, homeCity, phoneNumber, email);
     }
 
     @Override
