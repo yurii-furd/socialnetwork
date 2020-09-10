@@ -35,8 +35,8 @@ public class H2UserDAO implements UserDAO {
 
     @Override
     public User create(User entity) {
-        try (Connection connection = DriverManager.getConnection("", "", "");
-             PreparedStatement preparedStatement = connection.prepareStatement("insert into User(login,password,fullName,birthday,homeCity,phoneNumber,email) values(?,?,?,?,?,?,?)")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:h2:file:C:/Users/Pc/sc", "user", "user");
+             PreparedStatement preparedStatement = connection.prepareStatement("insert into User(LOGIN, PASSWORD, FULL_NAME, BIRTHDAY, HOME_CITY, PHONE_NUMBER, EMAIL) values(?, ?, ?, ?, ?, ?, ?)")) {
 
             preparedStatement.setString(1, entity.getLogin());
             preparedStatement.setString(2, entity.getPassword());

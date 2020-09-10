@@ -1,16 +1,18 @@
 package com.furd.socialnetwork.commands;
 
+import com.furd.socialnetwork.dao.UserDAO;
+import com.furd.socialnetwork.dao.impl.H2UserDAO;
 import com.furd.socialnetwork.entities.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 public class UserRegistration implements Command {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ParseException {
+    public String execute(HttpServletRequest request, HttpServletResponse response)  {
         String login = request.getParameter("login");
         String password = request.getParameter("psw");
         String pswRepea = request.getParameter("psw-repea");
@@ -20,7 +22,12 @@ public class UserRegistration implements Command {
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
         String birthday = request.getParameter("birthday");
-        Date date = formatter.parse(birthday);
+        Date date = null;
+        try {
+            date = new Date(formatter.parse(birthday).getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         String email = request.getParameter("email");
 
@@ -48,6 +55,9 @@ public class UserRegistration implements Command {
                 .setEmail(email);
 
         // Store user to DB
+        UserDAO userDAO = new H2UserDAO();
+        userDAO.create(user);
+        System.out.println(user.getId());
 
 
         return "/index.jsp";

@@ -5,5 +5,5 @@ import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
 
 public interface Command {
-    String execute(HttpServletRequest request, HttpServletResponse response) throws ParseException;
+    String execute(HttpServletRequest request, HttpServletResponse response);
 }

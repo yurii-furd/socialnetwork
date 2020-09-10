@@ -25,7 +25,7 @@ public class UserTest {
     @Test
     public void shouldPrintPhoneNumber() {
         User user = new User()
-                .setPhoneNumber(967471745);
+                .setPhoneNumber("967471745");
         assertEquals("PhoneNumber = 967471745", 967471745, user.getPhoneNumber());
     }
 }
