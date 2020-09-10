@@ -11,9 +11,8 @@ import com.furd.socialnetwork.entities.User;
 public class ExceptionsExample {
 
     public static void main(String[] args) {
-
-        // Exception - виняток
         // Исключительные ситуации
+        // Exception - виняток
         // Except - окрім
 
         // 1:
@@ -50,14 +49,13 @@ public class ExceptionsExample {
         // String str = (String) iAmString;
 
         // Теорі: помилки компіляції поділяються на дві категорії:
-        // Checked Exceptions (чеккед ексепшенс - ті які треба опрацювати! тебе змушують прийняти рішення або обробити або кинути наверх) - помилки з комп*ютером, з мережою, з доступом до ресурсів
-        // Unchecked Exceptions (анчеккед ексепшенс) - помилки програміста
+        // Checked Exceptions (чеккад ексепшенс - ті які треба опрацювати! тебе змушують прийняти рішення або обробити або кинути наверх) - помилки з комп*ютером, з мережою, з доступом до ресурсів
+        // Unchecked Exceptions (анчеккад ексепшенс) - помилки програміста
         // Errors !!!
 
     }
 
     private static void recursiveExampleStackOverflow() {
-
         recursiveExampleStackOverflow();
     }
 

@@ -4,20 +4,24 @@ import com.furd.socialnetwork.entities.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserRegistration implements Command {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws ParseException {
         String login = request.getParameter("login");
         String password = request.getParameter("psw");
         String pswRepea = request.getParameter("psw-repea");
         String fullName = request.getParameter("full-name");
         String homeCity = request.getParameter("home-city");
         String phoneNumber = request.getParameter("phone-number");
-        int phoneNumber1 = Integer.parseInt(phoneNumber.trim());
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
         String birthday = request.getParameter("birthday");
-        //
+        Date date = formatter.parse(birthday);
+
         String email = request.getParameter("email");
 
 
@@ -39,8 +43,8 @@ public class UserRegistration implements Command {
                 .setPassword(pswRepea)
                 .setFullName(fullName)
                 .setHomeCity(homeCity)
-                .setPhoneNumber(phoneNumber1)
-                //.setBirthday(birthday1)
+                .setPhoneNumber(phoneNumber)
+                .setBirthday(date)
                 .setEmail(email);
 
         // Store user to DB

@@ -18,7 +18,7 @@ public class User {
     private String fullName;
     private Date birthday;
     private String homeCity;
-    private long phoneNumber;
+    private String phoneNumber;
     private String email;
 
     public long getId() {
@@ -75,11 +75,11 @@ public class User {
         return this;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public User setPhoneNumber(long phoneNumber) {
+    public User setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }

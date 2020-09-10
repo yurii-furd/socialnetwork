@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DB {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        String url = "jdbc:h2:file:C:/Users/Bohdana/socialnetwork";
+        String url = " ";
         String userName = "sc_user";
         String userPassword = "sc_user";
 
@@ -22,9 +22,6 @@ public class DB {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
-
 
 
     }
@@ -57,3 +54,4 @@ public class DB {
 
 
     }
+}
