@@ -6,4 +6,9 @@ public interface AbstractDAO<T> {
 
     T findById(long id);
 
+    T update(T entity);
+
+    void delete(T entity);
+
+
 }

@@ -12,15 +12,15 @@ import java.sql.Date;
 
 public class UserRegistration implements Command {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response)  {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         String login = request.getParameter("login");
         String password = request.getParameter("psw");
-        String pswRepea = request.getParameter("psw-repea");
+        String pswRepeat = request.getParameter("psw-repeat");
         String fullName = request.getParameter("full-name");
         String homeCity = request.getParameter("home-city");
         String phoneNumber = request.getParameter("phone-number");
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         String birthday = request.getParameter("birthday");
         Date date = null;
         try {
@@ -37,9 +37,9 @@ public class UserRegistration implements Command {
 
         if (login.length() < 3) {
             return "error";
-        } else if (password != pswRepea && password.length() < 5) {
+        } else if (!password.equals(pswRepeat) || password.length() < 5) {
             return "error";
-        } else if (fullName.length() < 5 && fullName.length() > 25) {
+        } else if (fullName.length() < 5 || fullName.length() > 25) {
             return "error";
         }
 
@@ -47,7 +47,6 @@ public class UserRegistration implements Command {
         User user = new User()
                 .setLogin(login)
                 .setPassword(password)
-                .setPassword(pswRepea)
                 .setFullName(fullName)
                 .setHomeCity(homeCity)
                 .setPhoneNumber(phoneNumber)
